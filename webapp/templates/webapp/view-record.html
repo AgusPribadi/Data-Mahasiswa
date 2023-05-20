@@ -1,0 +1,46 @@
+{% extends 'webapp/base.html' %} {% block content %}
+
+<div class="card">
+  <div class="card-body">
+    <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+    <strong> {{ record.nama_awal }} {{ record.nama_akhir }} </strong>
+    <hr />
+
+    <p><strong> ID:</strong> {{ record.id }}</p>
+
+    <p><strong> NIM:</strong> {{ record.nim }}</p>
+
+    <p><strong> Semester:</strong> {{ record.semester }}</p>
+
+    <p><strong> Kelas:</strong> {{ record.kelas }}</p>
+
+    <p><strong>Email: </strong> {{ record.email }}</p>
+
+    <p><strong>Nomor HP: </strong> {{ record.nomor_hp }}</p>
+
+    <p><strong>Alamat: </strong> {{ record.alamat }}</p>
+
+    <p><strong>Kota: </strong> {{ record.kota }}</p>
+
+    <p><strong>Provinsi: </strong> {{ record.provinsi }}</p>
+
+    <p><strong>Tanggal dibuat: </strong> {{ record.tanggal_buat }}</p>
+  </div>
+</div>
+
+<br />
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary">Kembali &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+
+&nbsp;
+
+<a href="{% url 'update-record' record.id %}" class="btn btn-info">Perbarui Data &nbsp; <i class="fa fa-plus" aria-hidden="true"></i></a>
+
+&nbsp;
+
+<a href="{% url 'delete-record' record.id %}" class="btn btn-danger">Hapus &nbsp; <i class="fa fa-minus-square" aria-hidden="true"></i></a>
+
+<br />
+<br />
+
+{% endblock %}
