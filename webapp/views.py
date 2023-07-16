@@ -10,6 +10,8 @@ from .models import Record
 
 from django.contrib import messages
 
+from django.contrib.auth.decorators import login_required
+
 # - Homepage
 def home(request):
     
@@ -62,6 +64,9 @@ def my_login(request):
 
     return render(request, 'webapp/my-login.html', context=context)
 
+@login_required
+def profile_view(request):
+    return render(request, 'webapp/profile.html')
 
 # - Dashboard
 @login_required(login_url='my-login')
