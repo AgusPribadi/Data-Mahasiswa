@@ -8,45 +8,45 @@
 
 <hr />
 
-<table class="table table-hover table-bordered table-striped text-center text-center">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nama Lengkap</th>
-      <th scope="col">NIM</th>
-      <th scope="col">Semester</th>
-      <th scope="col">Kelas</th>
-      <th scope="col">Email</th>
-      <th scope="col">Nomor HP</th>
-      <th scope="col">Alamat</th>
-      <th scope="col">Kota</th>
-      <th scope="col">Provinsi</th>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped text-center">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nama Lengkap</th>
+                <th scope="col">NIM</th>
+                <th scope="col">Semester</th>
+                <th scope="col">Kelas</th>
+                <th scope="col">Email</th>
+                <th scope="col">Nomor HP</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Kota</th>
+                <th scope="col">Provinsi</th>
+                <th scope="col">Tanggal dibuat</th>
+                <th scope="col">View</th>
+            </tr>
+        </thead>
 
-      <th scope="col">Tanggal dibuat</th>
-
-      <th scope="col">View</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    {% if records %} {% for record in records %}
-    <tr>
-      <td>{{ record.id }}</td>
-      <td>{{ record.nama_awal }} {{ record.nama_akhir }}</td>
-      <td>{{ record.nim }}</td>
-      <td>{{ record.semester }}</td>
-      <td>{{ record.kelas }}</td>
-      <td>{{ record.email }}</td>
-      <td>{{ record.nomor_hp }}</td>
-      <td>{{ record.alamat }}</td>
-      <td>{{ record.kota }}</td>
-      <td>{{ record.provinsi }}</td>
-      <td>{{ record.tanggal_buat }}</td>
-      <td>
-        <a class="btn btn-success btn-sm" href="{% url 'record' record.id %}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-      </td>
-      {% endfor %} {% endif %}
-    </tr>
-  </tbody>
-</table>
+        <tbody>
+            {% if records %} {% for record in records %}
+            <tr>
+                <td>{{ record.id }}</td>
+                <td>{{ record.nama_awal }} {{ record.nama_akhir }}</td>
+                <td>{{ record.nim }}</td>
+                <td>{{ record.semester }}</td>
+                <td>{{ record.kelas }}</td>
+                <td>{{ record.email }}</td>
+                <td>{{ record.nomor_hp }}</td>
+                <td>{{ record.alamat }}</td>
+                <td>{{ record.kota }}</td>
+                <td>{{ record.provinsi }}</td>
+                <td>{{ record.tanggal_buat }}</td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="{% url 'record' record.id %}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            {% endfor %} {% endif %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
